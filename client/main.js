@@ -10,6 +10,7 @@ Template.hello.onCreated(function helloOnCreated() {
 
 Template.hello.helpers({
   counter() {
+    console.log('helper');
     return Template.instance().counter.get();
   },
 });
@@ -19,4 +20,10 @@ Template.hello.events({
     // increment the counter when button is clicked
     instance.counter.set(instance.counter.get() + 1);
   },
+});
+
+Template.stephanie.events({
+  'click #steph-button'(event, instance) {
+    console.log('button works?');
+  }
 });
